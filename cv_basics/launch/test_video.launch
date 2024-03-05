@@ -1,0 +1,6 @@
+<launch>
+
+<node pkg="rosbag" type="play" name="player" output="screen" args="--clock /home/jayang/catkin_ws/src/cv_basics/bagfiles/test_video_14-06.bag"/>
+
+<node name="republish" type="republish" pkg="image_transport" output="screen" args="compressed in:=/camera/image_color/ _image_transport:=compressed raw out:=camera/image_color" />
+</launch>
